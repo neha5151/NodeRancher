@@ -15,4 +15,4 @@ COPY . /app
 WORKDIR /app
 RUN npm install
 CMD node index.js
-EXPOSE 8080
+EXPOSE 8000
