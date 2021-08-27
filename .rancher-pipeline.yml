@@ -1,0 +1,14 @@
+stages:
+  - name: Build image
+    steps:
+      - publishImageConfig:
+          dockerfilePath: ./Dockerfile
+          buildContext: .
+          tag: minvar/sample-api
+          pushRemote: true
+          registry: index.docker.io
+
+  - name: Deploy
+    steps:
+      - applyYamlConfig:
+          path: ./kubernetes.yaml
